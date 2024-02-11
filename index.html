@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farzin Adil</title>
+  <script type="text/javascript" src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -69,21 +70,5 @@
       </div>
     </div>
   </div>
-  <script>
-    function toggleMenu() {
-  const navigation = document.getElementById('navigation');
-  document.body.classList.toggle('menu-active');
-  
-  // Check if the menu is active and set the padding accordingly
-  if (document.body.classList.contains('menu-active')) {
-    navigation.style.display = 'flex'; // Temporarily display the menu to measure its height
-    const navHeight = navigation.offsetHeight + 'px'; // Get the height of the navigation
-    document.documentElement.style.setProperty('--nav-height', navHeight); // Set the height as a CSS variable
-    navigation.style.display = ''; // Remove the display style
-  } else {
-    document.documentElement.style.removeProperty('--nav-height');
-  }
-}
-  </script>
 </body>
 </html>
