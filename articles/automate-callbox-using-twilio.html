@@ -4,40 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles - Farzin Adil</title>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-white main-font">
   <div class="container mx-auto px-6 py-10">
     <div class="flex flex-col lg:flex-row justify-between items-start">
       <!-- Mobile menu button -->
       <div class="text-5xl font-bold mb-10 w-full flex justify-between lg:hidden">
-        <h1 id="site-title"><a href="index.html">Farzin Adil</a></h1>
+        <h1 id="site-title"><a href="../index.html">Farzin Adil</a></h1>
         <button class="text-3xl" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </button>
       </div>
       <!-- Mobile menu -->
       <nav id="navigation" class="flex flex-col items-center bg-white z-10 p-4 w-full absolute hidden lg:hidden">
-        <a href="articles.html" class="text-xl mb-4">Articles</a>
+        <a href="../html/articles.html" class="text-xl mb-4">Articles</a>
         <a href="#" class="text-xl mb-4">Projects</a>
-        <a href="books.html" class="text-xl mb-4">Bookshelf</a>
+        <a href="../html/books.html" class="text-xl mb-4">Bookshelf</a>
         <a href="#" class="text-xl mb-4">Contact</a>
       </nav>
       <div class="desktop-grid"></div>
       <!-- Left column for name and navigation (shown on desktop) -->
       <div class="w-full lg:w-1/4 lg:block hidden mb-10">
         <div class="desktop-header">
-            <h1 id="site-title"><a href="index.html">Farzin Adil</a></h1>
+            <h1 id="site-title"><a href="../index.html">Farzin Adil</a></h1>
             <!-- Other header content if needed -->
         </div>
         <nav class="flex flex-col text-xl">
-          <a href="articles.html" class="mb-4">Articles</a>
+          <a href="../html/articles.html" class="mb-4">Articles</a>
           <a href="#" class="mb-4">Projects</a>
-          <a href="books.html" class="mb-4">Bookshelf</a>
+          <a href="../html/books.html" class="mb-4">Bookshelf</a>
           <a href="#" class="mb-4">Contact</a>
         </nav>
         <div class="flex text-2xl">
@@ -58,7 +58,7 @@
           <!-- Article content goes here -->
           <p>This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.</p>
         </br>
-        <img src="public/img/callbox.jpg" alt="Article description">
+        <img src="../public/img/callbox.jpg" alt="Article description">
         </br>
           <p>Many apartment complexes and gated communities utilize call boxes that require visitors to call a resident who then needs to answer and dial 9 to unlock the door or gate. This can be inconvenient for both visitors and residents as it relies on the resident’s availability to pick up a phone call and coordinate entry. This process can be easily automated by using Twilio, thus alleviating the resident’s inconvenience and decreasing visitor wait times.
           </p>
@@ -79,13 +79,13 @@
             2. Under Develop, Go to Functions > Services > Create Service. Name the new service as desired.
         </p>
         </br>
-        <img src="public/img/twilio-1.jpg" alt="Article description">
+        <img src="../public/img/twilio-1.jpg" alt="Article description">
         </br>
         <p>
             3. Click “Add Function” and create the four following functions: prompt, gather, call, and text.
         </p>
         </br>
-        <img src="public/img/twilio-2.jpg" alt="Article description">
+        <img src="../public/img/twilio-2.jpg" alt="Article description">
         </br>
         <p>
             4. Replace the code for the new functions with the respective code below:
@@ -97,7 +97,7 @@
             5. Go to “Environment Variables” under Settings in the Twilio service and make sure the option “Add my Twilio Credentials (ACCOUNT_SID) and (AUTH_TOKEN) to ENV” is selected.
         </p>
         </br>
-        <img src="public/img/twilio-3.jpg" alt="Article description">
+        <img src="../public/img/twilio-3.jpg" alt="Article description">
         </br>
         <p>
             6. Add the environment variables listed below, with the text being entered as the key and numericals entered as the value:
@@ -120,7 +120,7 @@
             8. Go to Phone Numbers > Manage Numbers > Active Numbers. Select the Twilio number and scroll down to Voice & Fax.
         </p> 
         </br>
-        <img src="public/img/twilio-4.jpg" alt="Article description">
+        <img src="../public/img/twilio-4.jpg" alt="Article description">
         </br>
         <p>
             9. Assign the new service created by selecting its name from the dropdown, and set the function path to “/prompt.”
