@@ -1,0 +1,113 @@
+.main-font {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    transition: padding-top 0.3s; /* Smooth transition for padding */
+  }
+  
+  .menu-button {
+    z-index: 20; /* Ensures the menu button is above the navigation menu */
+    position: fixed; /* Fixed position to stay in view on scroll */
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  #navigation {
+    background-color: #e5e5e5; /* Grey background for the menu */
+    flex-direction: column;
+    align-items: center;
+    position: absolute; /* Absolute position to stay in view on scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none; /* Hidden by default */
+    z-index: 10; /* Ensure it's above other content but below the menu button */
+  }
+  
+  /* Show the navigation when the menu button is clicked */
+  body.menu-active #navigation {
+    display: flex;
+    padding-top: 60px; /* Adjust this value to account for the height of the menu button */
+  }
+  /* Style for the main content area */
+.container {
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: flex-start; /* Align content to the start of the container */
+  }
+  
+  /* Style for the profile image */
+  .profile-image {
+    margin-right: 2rem; /* Add space between the image and the text */
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+
+    #site-title {
+        font-size: 2rem; /* Large size for desktop */
+        font-weight: bold;
+        display: block; /* Ensure the title is displayed */
+        margin-top: 1rem; /* Adjust as needed for your layout */
+        margin-bottom: 1rem; /* Adjust as needed for your layout */
+      }
+
+ 
+
+    .lg\\:w-1/4 {
+      width: 25%;
+    }
+  
+    .lg\\:w-3/4 {
+      width: 75%;
+    }
+  
+    .lg\\:pl-10 {
+      padding-left: 2.5rem;
+    }
+  
+    #navigation, .menu-button {
+      display: none; /* Hide the mobile menu button and navigation on desktop */
+    }
+
+    
+  }
+  
+  /* Adjust the mobile menu button area */
+  .text-5xl {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 1023px) {
+    /* Shift content down when menu is toggled */
+    body.menu-active {
+      padding-top: var(--nav-height); /* Variable for dynamic height adjustment */
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the container's children horizontally */
+      }
+    
+      /* If your image is within another container or has specific class/id, target that instead */
+      .profile-image {
+        /* Assuming .profile-image is the class for your image */
+        display: block; /* Change to block if it's an inline element */
+        margin: 0 auto; /* This will center the image if it's a block element */
+        width: 100%; /* Your image width */
+        height: 100%; /* Your image height */
+      }
+      #site-title {
+        font-size: 1.5rem;
+      }
+      .profile-image-container {
+        margin-bottom: 2em;
+
+      }
+
+  }
