@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farzin Adil</title>
+  <title>Articles - Farzin Adil</title>
   <script type="text/javascript" src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
@@ -49,25 +49,31 @@
       </div>
       <!-- Right column for profile and bio -->
       <div class="w-full lg:w-3/4 lg:pl-10">
-        <div class="profile-image-container">
-            <div class="profile-image"> 
-                <img src="https://farzinadil.com/img/right-home-image.png" alt="Placeholder profile image of Farzin Adil" class="mb-10">
-            </div>
+        <h2 class="my-4">Most Popular Articles</h2>
+        <!-- Articles list -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Repeat this block for each article -->
+          <div onclick="location.href='automate-callbox-using-twilio.html';" style="cursor: pointer;" class="col-span-2 md:col-span-1">
+            <img src="public/img/callbox.jpg" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Automate Call Box Access Using Twilio</h3>
+            <p class="text-gray-600">This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.
+            </p>
+          </div>
+          <!-- ... other articles -->
+          <div class="col-span-2 md:col-span-1">
+            <img src="public/img/callbox.jpg" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Automate Call Box Access Using Twilio</h3>
+            <p class="text-gray-600">This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.
+            </p>
+          </div>
+          
         </div>
+  
         
-        
-        
-        <p class="text-gray-800 text-lg mb-6">
-          I am a software engineer and enjoy working on cool projects.
-        </p>
-        <p class="text-gray-800 text-lg mb-6">
-            Currently, I am working at Lockheed Martin. Previously, I studied Software Engineering at San Jose State University and was an intern at CDK Global and at Linqto.
-        </p>
-        <p class="text-gray-800 text-lg">
-          Aside from programming, I enjoy training martial arts such as Jiu Jitsu, Muay Thai/Kickboxing, and wrestling.
-          At the moment I'm writing articles and reading these books while working on stuff that interests me.
-        </p>
+          <!-- ... other articles -->
+        </div>
       </div>
+      <!-- End right column -->
     </div>
   </div>
 </body>

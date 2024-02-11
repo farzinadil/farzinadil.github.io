@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles - Farzin Adil</title>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white main-font">
+  <div class="container mx-auto px-6 py-10">
+    <div class="flex flex-col lg:flex-row justify-between items-start">
+      <!-- Mobile menu button -->
+      <div class="text-5xl font-bold mb-10 w-full flex justify-between lg:hidden">
+        <h1 id="site-title"><a href="index.html">Farzin Adil</a></h1>
+        <button class="text-3xl" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <nav id="navigation" class="flex flex-col items-center bg-white z-10 p-4 w-full absolute hidden lg:hidden">
+        <a href="#" class="text-xl mb-4">Articles</a>
+        <a href="#" class="text-xl mb-4">Projects</a>
+        <a href="#" class="text-xl mb-4">Reading List</a>
+        <a href="#" class="text-xl mb-4">Contact</a>
+      </nav>
+      <div class="desktop-grid"></div>
+      <!-- Left column for name and navigation (shown on desktop) -->
+      <div class="w-full lg:w-1/4 lg:block hidden mb-10">
+        <div class="desktop-header">
+            <h1 id="site-title"><a href="index.html">Farzin Adil</a></h1>
+            <!-- Other header content if needed -->
+        </div>
+        <nav class="flex flex-col text-xl">
+          <a href="articles.html" class="mb-4">Articles</a>
+          <a href="#" class="mb-4">Projects</a>
+          <a href="#" class="mb-4">Reading List</a>
+          <a href="#" class="mb-4">Contact</a>
+        </nav>
+        <div class="flex text-2xl">
+          <a href="mailto:farzinadil@gmail.com" class="mr-6"><i class="fas fa-envelope"></i></a> <!-- Email icon -->
+          <a href="https://github.com/farzinadil" target="_blank" class="mr-6"><i class="fab fa-github"></i> <!-- GitHub icon -->
+          <a href="https://twitter.com/farzinadil" target="_blank" class="mr-6"><i class="fab fa-twitter"></i></a> <!-- Twitter icon -->
+          <a href="https://www.linkedin.com/in/farzinadil/" target="_blank" class="mr-6"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn icon -->
+        </div>
+      </div>
+      <!-- Right column for profile and bio -->
+      <div class="p-4 md:w-3/4 w-full">
+        <div class="max-w-4xl mx-auto">
+          <!-- Article Title -->
+          <h2 class="text-2xl font-bold mb-4 mt-8">Automate Call Box Access Using Twilio</h2>
+          <!-- Article Meta and Content -->
+          <p class="text-gray-600">December 28, 2021</p>
+        </br>
+          <!-- Article content goes here -->
+          <p>This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.</p>
+        </br>
+        <img src="public/img/callbox.jpg" alt="Article description">
+        </br>
+          <p>Many apartment complexes and gated communities utilize call boxes that require visitors to call a resident who then needs to answer and dial 9 to unlock the door or gate. This can be inconvenient for both visitors and residents as it relies on the resident’s availability to pick up a phone call and coordinate entry. This process can be easily automated by using Twilio, thus alleviating the resident’s inconvenience and decreasing visitor wait times.
+          </p>
+        </br>
+          <p>
+            Twilio services can be configured in many different ways to suit a user’s unique access needs. If security is not a concern, one option is to grant gate/door access automatically when the number is called. Another approach could be leaving the gate open during certain hours and forwarding the call to a designated number outside of those hours. This particular article covers setting a passcode to enable visitor access. (The code for the other approaches can be found here)
+          </p>
+        </br>
+          <p>
+            The following steps will demonstrate how to set up a Twilio service that asks the visitor to enter a passcode at the call box, replies by sending a ‘9' DTMF tone to unlock the gate, and sends an SMS notification to the resident when access has been granted. If the passcode entered is incorrect, the call will be forwarded to a phone number.
+          </p>
+        </br>
+        <p>
+            1. Create a Twilio account and buy a number. Here’s a guide on how to do this.
+        </p>
+        </br>
+        <p>
+            2. Under Develop, Go to Functions > Services > Create Service. Name the new service as desired.
+        </p>
+        </br>
+        <img src="public/img/twilio-1.jpg" alt="Article description">
+        </br>
+        <p>
+            3. Click “Add Function” and create the four following functions: prompt, gather, call, and text.
+        </p>
+        </br>
+        <img src="public/img/twilio-2.jpg" alt="Article description">
+        </br>
+        <p>
+            4. Replace the code for the new functions with the respective code below:
+        </p>
+        </br>
+        <script src="https://gist.github.com/farzinadil/23ca55703911dd9373d3eee16bdb83bb.js"></script>
+        </br>
+        <p>
+            5. Go to “Environment Variables” under Settings in the Twilio service and make sure the option “Add my Twilio Credentials (ACCOUNT_SID) and (AUTH_TOKEN) to ENV” is selected.
+        </p>
+        </br>
+        <img src="public/img/twilio-3.jpg" alt="Article description">
+        </br>
+        <p>
+            6. Add the environment variables listed below, with the text being entered as the key and numericals entered as the value:
+        </p>
+        </br>
+        <ul>
+            <li>TWILIO_NUMBER and your Twilio Number formatted as +1 followed by digits only (ex: +14155551212)</li>
+            <li>PASSCODE and 3 digits</li>
+                <ul><!-- start of nested list-->
+                    <li>Note: To set the passcode to a different number of digits, change numDigits of the “gather” code</li>
+                </ul>
+            <li>PHONE_NUMBER and your personal phone number in the same format as the Twilio number</li>
+        </ul>
+        </br>
+        <p>
+            7. Save all functions and Deploy All.
+        </p> 
+        </br>
+        <p>
+            8. Go to Phone Numbers > Manage Numbers > Active Numbers. Select the Twilio number and scroll down to Voice & Fax.
+        </p> 
+        </br>
+        <img src="public/img/twilio-4.jpg" alt="Article description">
+        </br>
+        <p>
+            9. Assign the new service created by selecting its name from the dropdown, and set the function path to “/prompt.”
+        </p> 
+        </br>
+        <p>
+            That completes the Twilio set up! Now all that’s left to do is to change the number on the call box to the Twilio number and enjoy the convenience of your new automation.
+        </p>   
+
+
+
+        </div>
+      </div>
+      <!-- End right column -->
+    </div>
+  </div>
+</body>
+</html>
