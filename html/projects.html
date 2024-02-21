@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles - Farzin Adil</title>
-  <script type="text/javascript" src="js/script.js"></script>
+  <title>Projects - Farzin Adil</title>
+  <script type="text/javascript" src="../js/script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-white main-font">
   <div class="container mx-auto px-6 py-10">
@@ -20,11 +20,19 @@
           <i class="fas fa-bars"></i>
         </button>
       </div>
+      <div class="flex justify-center lg:justify-start space-x-3 p-1 lg:hidden mt-[-2.5rem] mb-10">
+        <a href="mailto:farzinadil@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/farzinadil" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/farzinadil" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/farzinadil/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Instagram link visible on mobile only -->
+        <a href="https://www.instagram.com/farzinadil/" target="_blank" class="block lg:hidden"><i class="fab fa-instagram"></i></a>
+      </div>
       <!-- Mobile menu -->
       <nav id="navigation" class="flex flex-col items-center bg-white z-10 p-4 w-full absolute hidden lg:hidden">
-        <a href="html/articles.html" class="text-xl mb-4">Articles</a>
-        <a href="#" class="text-xl mb-4">Projects</a>
-        <a href="html/books.html" class="text-xl mb-4">Bookshelf</a>
+        <a href="../html/articles.html" class="text-xl mb-4">Articles</a>
+        <a href="../html/projects.html" class="text-xl mb-4">Projects</a>
+        <a href="../html/books.html" class="text-xl mb-4">Bookshelf</a>
         <a href="#" class="text-xl mb-4">Contact</a>
       </nav>
       <div class="desktop-grid"></div>
@@ -35,9 +43,9 @@
             <!-- Other header content if needed -->
         </div>
         <nav class="flex flex-col text-xl">
-          <a href="html/articles.html" class="mb-4">Articles</a>
-          <a href="#" class="mb-4">Projects</a>
-          <a href="html/books.html" class="mb-4">Bookshelf</a>
+          <a href="../html/articles.html" class="mb-4">Articles</a>
+          <a href="../html/projects.html" class="mb-4">Projects</a>
+          <a href="../html/books.html" class="mb-4">Bookshelf</a>
           <a href="#" class="mb-4">Contact</a>
         </nav>
         <div class="flex text-2xl">
@@ -49,24 +57,73 @@
       </div>
       <!-- Right column for profile and bio -->
       <div class="w-full lg:w-3/4 lg:pl-10">
-        <h2 class="my-4">Most Popular Articles</h2>
+        <h2 class="my-4">Projects</h2>
         <!-- Articles list -->
         <div class="grid grid-cols-2 gap-4">
           <!-- Repeat this block for each article -->
-          <div onclick="location.href='articles/automate-callbox-using-twilio.html';" style="cursor: pointer;" class="col-span-2 md:col-span-1">
-            <img src="public/img/callbox.jpg" alt="Article description" class="w-full">
+           <!-- ... other articles -->
+          <div class="col-span-2 md:col-span-1">
+            <img src="../public/img/callbox-resized.jpeg" alt="Article description" class="w-full">
             <h3 class="text-xl font-bold my-2">Automate Call Box Access Using Twilio</h3>
             <p class="text-gray-600">This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.
             </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/Twilio-Gate-Openor" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="../articles/automate-callbox-using-twilio.html" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
           </div>
           <!-- ... other articles -->
           <div class="col-span-2 md:col-span-1">
-            <img src="public/img/silicon-valley.jpg" alt="Article description" class="w-full">
-            <h3 class="text-xl font-bold my-2">Will There be Another Silicon Valley?</h3>
-            <p class="text-gray-600">This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.
+            <img src="../public/img/car-price-history-tool-farzin-adil.png" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">flyingcarz.io</h3>
+            <p class="text-gray-600">A tool to visualize changes in average market values of specific automobiles. Developed with Python, Typescript, MongoDB, Node.js, and AWS Lambda.
             </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/car-price-history-tool" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://flyingcarz.io/" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
           </div>
-          
+          <!-- ... other articles -->
+          <div class="col-span-2 md:col-span-1">
+            <img src="../public/img/twilio-texts.png" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Dogefather</h3>
+            <p class="text-gray-600">Program that sends an SMS with Twilio API when crypto influencers such as Elon Musk tweet about a stock or cryptocurrency.
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/Dogefather" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+          <!-- ... other articles -->
+          <div class="col-span-2 md:col-span-1">
+            <img src="../public/img/health-monitor-app.png" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Health Monitor</h3>
+            <p class="text-gray-600">A desktop app that lets users track their health data. Electron desktop app built Node.js, Express.js, and MongoDB for a class group project.
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/Health-Monitor-App" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+          <!-- ... other articles -->
+          <div class="col-span-2 md:col-span-1">
+            <img src="../public/img/battle-falcons-image.png" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Battle Falcons</h3>
+            <p class="text-gray-600">Battle Falcons is a single-player card-based desktop game built using Java. Download for PC or Mac by clicking link below.
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/Battle-Falcons" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://roastmygame.com/game/battle-falcons" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </div>
+           <!-- ... other articles -->
+           <div class="col-span-2 md:col-span-1">
+            <img src="../public/img/farzin-adil-self-driving-car.jpeg" alt="Article description" class="w-full">
+            <h3 class="text-xl font-bold my-2">Self-Driving RC Car</h3>
+            <p class="text-gray-600">This is a collision avoiding Autonomous RC Car. This is built using an Arduino with C.
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+              <a href="https://github.com/farzinadil/Autonomous-RC-Car" class="border-2 border-black text-black py-2 px-4 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
         </div>
   
         

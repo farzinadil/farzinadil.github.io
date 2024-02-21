@@ -19,6 +19,15 @@
     z-index: 10; /* Ensure it's above other content but below the menu button */
   }
   
+  blockquote.custom-style {
+    border-left: 4px solid #4a5568; /* Tailwind's gray-500 color */
+    padding-left: 1rem; /* 16px */
+    font-style: italic;
+    color: #718096; /* Tailwind's gray-600 color */
+    margin-top: 1rem; /* 16px */
+    margin-bottom: 1rem; /* 16px */
+  }
+
   /* Show the navigation when the menu button is clicked */
   body.menu-active #navigation {
     display: flex;

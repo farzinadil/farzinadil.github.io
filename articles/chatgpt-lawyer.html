@@ -21,6 +21,14 @@
           <i class="fas fa-bars"></i>
         </button>
       </div>
+      <div class="flex justify-center lg:justify-start space-x-3 p-1 lg:hidden mt-[-2.5rem] mb-1">
+        <a href="mailto:farzinadil@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/farzinadil" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/farzinadil" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/farzinadil/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Instagram link visible on mobile only -->
+        <a href="https://www.instagram.com/farzinadil/" target="_blank" class="block lg:hidden"><i class="fab fa-instagram"></i></a>
+      </div>
       <!-- Mobile menu -->
       <nav id="navigation" class="flex flex-col items-center bg-white z-10 p-4 w-full absolute hidden lg:hidden">
         <a href="../html/articles.html" class="text-xl mb-4">Articles</a>
@@ -37,7 +45,7 @@
         </div>
         <nav class="flex flex-col text-xl">
           <a href="../html/articles.html" class="mb-4">Articles</a>
-          <a href="#" class="mb-4">Projects</a>
+          <a href="../html/projects.html" class="mb-4">Projects</a>
           <a href="../html/books.html" class="mb-4">Bookshelf</a>
           <a href="#" class="mb-4">Contact</a>
         </nav>
@@ -52,89 +60,68 @@
       <div class="p-4 md:w-3/4 w-full">
         <div class="max-w-4xl mx-auto">
           <!-- Article Title -->
-          <h2 class="text-2xl font-bold mb-4 mt-8">I Went to Court with ChatGPT as my Lawyer</h2>
+          <h2 class="text-2xl font-bold mb-4 mt-8">I Went to Court with AI as my Lawyer</h2>
           <!-- Article Meta and Content -->
-          <p class="text-gray-600">July 8, 2023</p>
+          <p class="text-gray-600">August 15, 2023</p>
         </br>
           <!-- Article content goes here -->
-          <p>This guide demonstrates how to utilize a Twilio service to automate opening a gate or door controlled by a call box where users are required to answer a call and dial 9 to enable access.</p>
+          <p>I was issued a traffic citation and decided to go to court with ChatGPT and Google Bard as my legal counsel. Here’s what happened.</p>
         </br>
-        <img src="../public/img/callbox.jpg" alt="Article description">
+        <img src="../public/img/court.jpg" alt="Article description">
         </br>
-          <p>Many apartment complexes and gated communities utilize call boxes that require visitors to call a resident who then needs to answer and dial 9 to unlock the door or gate. This can be inconvenient for both visitors and residents as it relies on the resident’s availability to pick up a phone call and coordinate entry. This process can be easily automated by using Twilio, thus alleviating the resident’s inconvenience and decreasing visitor wait times.
+          <p>I recently bought a car in California and was issued a Temporary Operating Permit (TOP). I was driving this car on the other side of the country in Pennsylvania when I got pulled over. The officer issued a citation of Pennsylvania's statute 75 § 7124: Fraudulent use or removal of registration plate.  He didn’t believe the California TOP was valid or legitimate. 
           </p>
         </br>
           <p>
-            Twilio services can be configured in many different ways to suit a user’s unique access needs. If security is not a concern, one option is to grant gate/door access automatically when the number is called. Another approach could be leaving the gate open during certain hours and forwarding the call to a designated number outside of those hours. This particular article covers setting a passcode to enable visitor access. (The code for the other approaches can be found here)
+            Facing a $243.15 fine, I could have easily settled it by paying off the amount, dodging a court appearance, and moving past the issue. Instead, I opted to declare myself not guilty and take the matter to court, encouraged by my confidence in leveraging AI for legal counsel in this scenario. Without generative artificial intelligence (AI) tools like ChatGPT and Google Bard, I would have conceded and paid the fine, as hiring an attorney for a $243.15 fine wouldn't be financially sensible, nor would conducting the necessary legal research myself seem a worthwhile investment of time. AI, however, shifted the equation. Upon presenting the details of the incident and the charges to both ChatGPT and Google Bard, they concurred that I had not violated any laws.
           </p>
         </br>
           <p>
-            The following steps will demonstrate how to set up a Twilio service that asks the visitor to enter a passcode at the call box, replies by sending a ‘9' DTMF tone to unlock the gate, and sends an SMS notification to the resident when access has been granted. If the passcode entered is incorrect, the call will be forwarded to a phone number.
+            This is the defense that Google Bard drafted:
+          </p>
+          <blockquote class="custom-style">
+            <p>Your Honor,</p>
+          </br>
+            <p>I am here today to contest the charge of fraudulent use/removal of registration plate under PA statute 75 § 7124. I was driving my car with a valid California Temporary Operating Permit (TOP) when I was pulled over by the police. The officer claimed that my TOP was not a valid registration plate, and that I was therefore in violation of the law.</p>
+          </br>
+            <p>I respectfully disagree with the officer's interpretation of the law. A TOP is a valid registration plate, and it is not affixed to a vehicle with the intent to conceal or misrepresent the identity of the vehicle or its owner. In fact, the California DMV specifically states that a TOP can be used to operate a vehicle on public roads in Pennsylvania.</p>
+          </br>
+            <p>To support my argument, I would like to present the following evidence:</p>
+          </br>
+            <ul>
+              <li>— A copy of my valid California TOP.</li>
+              <li>— Proof of payment of all registration fees.</li>
+              <li>— Proof of insurance.</li>
+            </ul>
+          </br>
+          <p>I would also like to clarify that I was in compliance with the requirements set forth by the California DMV for the display and use of the TOP. I displayed the TOP on my vehicle in the same manner as a license plate, and I was not attempting to conceal or misrepresent the identity of the vehicle or its owner.</p>
+        </br>
+        <p>I would like to emphasize that I had no intent to commit fraud or misrepresent the identity of my vehicle. I was merely using the TOP in accordance with California law and had no intention of violating Pennsylvania law.</p>
+      </br>
+      <p>Based on the evidence presented and the lack of fraudulent intent, I kindly request that the traffic court dismiss the citation issued under PA statute 75 § 7124.</p>
+    </br>
+    <p>Thank you for your time.</p>
+
+            <!-- The rest of the content -->
+          </blockquote>
+        </br>
+        <p>
+          Armed with the defense crafted by AI, I confidently entered the courthouse, ready to challenge the traffic citation I had received. Dressed appropriately and feeling assured of my position, I was prepared to present my case. Before the hearing, I encountered the issuing officer in the waiting area. We discussed the situation briefly, and he asked me to show him the valid registration along with other documents.        </p>
+        </br>
+        <p>
+          After reviewing the documents, the officer realized that pursuing the case might be futile and he decided to drop the case. This outcome, while unexpected, made me feel vindicated and demonstrated the utility of AI.        </p>
+        </br>
+        <p>
+          The experience affirmed the value of AI in providing legal guidance. Despite my lack of legal knowledge, the advice from ChatGPT and Google Bard gave me the confidence to contest the citation effectively.         </p>
+        </br>
+        <p>
+          However, it is important to exercise caution as there is a case of AI citing incorrect information in a court case. While there are certainly some issues that need to be resolved, I see tremendous potential in using AI for low-cost legal assistance. 
           </p>
         </br>
-        <p>
-            1. Create a Twilio account and buy a number. Here’s a guide on how to do this.
-        </p>
-        </br>
-        <p>
-            2. Under Develop, Go to Functions > Services > Create Service. Name the new service as desired.
-        </p>
-        </br>
-        <img src="../public/img/twilio-1.jpg" alt="Article description">
-        </br>
-        <p>
-            3. Click “Add Function” and create the four following functions: prompt, gather, call, and text.
-        </p>
-        </br>
-        <img src="../public/img/twilio-2.jpg" alt="Article description">
-        </br>
-        <p>
-            4. Replace the code for the new functions with the respective code below:
-        </p>
-        </br>
-        <script src="https://gist.github.com/farzinadil/23ca55703911dd9373d3eee16bdb83bb.js"></script>
-        </br>
-        <p>
-            5. Go to “Environment Variables” under Settings in the Twilio service and make sure the option “Add my Twilio Credentials (ACCOUNT_SID) and (AUTH_TOKEN) to ENV” is selected.
-        </p>
-        </br>
-        <img src="../public/img/twilio-3.jpg" alt="Article description">
-        </br>
-        <p>
-            6. Add the environment variables listed below, with the text being entered as the key and numericals entered as the value:
-        </p>
-        </br>
-        <ul>
-            <li>TWILIO_NUMBER and your Twilio Number formatted as +1 followed by digits only (ex: +14155551212)</li>
-            <li>PASSCODE and 3 digits</li>
-                <ul><!-- start of nested list-->
-                    <li>Note: To set the passcode to a different number of digits, change numDigits of the “gather” code</li>
-                </ul>
-            <li>PHONE_NUMBER and your personal phone number in the same format as the Twilio number</li>
-        </ul>
-        </br>
-        <p>
-            7. Save all functions and Deploy All.
-        </p> 
-        </br>
-        <p>
-            8. Go to Phone Numbers > Manage Numbers > Active Numbers. Select the Twilio number and scroll down to Voice & Fax.
-        </p> 
-        </br>
-        <img src="../public/img/twilio-4.jpg" alt="Article description">
-        </br>
-        <p>
-            9. Assign the new service created by selecting its name from the dropdown, and set the function path to “/prompt.”
-        </p> 
-        </br>
-        <p>
-            That completes the Twilio set up! Now all that’s left to do is to change the number on the call box to the Twilio number and enjoy the convenience of your new automation.
-        </p> 
-        </br>  
         <hr>
         </br>
         <p>
-            Reach out to me at farzinadil@gmail.com for any questions, comments, or concerns.
+            Reach out to me at farzinadil@gmail.com for any questions, suggestions, or feedback.
         </p> 
 
 
