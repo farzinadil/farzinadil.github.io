@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .gr_custom_container_1707636870 {
     /* customize your Goodreads widget container here*/
     border: 1px solid gray;
