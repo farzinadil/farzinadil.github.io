@@ -53,3 +53,11 @@
     border: 5px solid;
 
   }
+  @media (min-width: 1024px) {
+
+    #gr_custom_widget_1707636870{
+      display: block;
+      margin-left: 50%;
+      width: 100%; /* Or any specific width */
+    }
+  }
