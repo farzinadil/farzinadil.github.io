@@ -115,3 +115,12 @@
     display: flex;
     justify-content: center;
   }
+  
+  .custom-link {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline;
+  }
