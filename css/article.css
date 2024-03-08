@@ -89,6 +89,29 @@
     #navigation, .menu-button {
       display: none; /* Hide the mobile menu button and navigation on desktop */
     }
+    .tweet-container {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .twitter-tweet {
+        margin: 0 auto; /* Center horizontally */
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
 
     
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
   }
