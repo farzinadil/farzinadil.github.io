@@ -120,3 +120,11 @@ main-font {
     margin-left: 40px;
     list-style-type: circle;
  }
+ .custom-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.custom-link:hover {
+  text-decoration: underline;
+}
