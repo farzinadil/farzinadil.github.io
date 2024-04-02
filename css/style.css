@@ -121,10 +121,9 @@ main-font {
     list-style-type: circle;
  }
  .custom-link {
-  color: blue;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .custom-link:hover {
-  text-decoration: underline;
+  color: blue;
 }
