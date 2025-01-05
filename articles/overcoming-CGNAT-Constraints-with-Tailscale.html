@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KCTPZJL62"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7KCTPZJL62');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overcoming CGNAT Constraints with Tailscale</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Learn how to overcome CGNAT limitations on Starlink and 5G home internet connections using Tailscale, a powerful VPN solution that enables port forwarding and hosting behind NAT." />
+  <meta name="keywords" content="CGNAT, Tailscale, Starlink, IPv6, NAT, 5G, satellite internet, port forwarding, home networking" />
+  <link rel="canonical" href="https://www.farzinadil.com/articles/overcoming-CGNAT-Constraints-with-Tailscale.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Overcoming CGNAT Constraints with Tailscale" />
+  <meta property="og:description" content="Learn how to overcome CGNAT limitations on satellite and 5G home internet connections using Tailscale for direct port forwarding and hosting." />
+  <meta property="og:image" content="../public/img/cgnat.jpg" />
+  <meta property="og:url" content="https://www.farzinadil.com/articles/overcoming-CGNAT-Constraints-with-Tailscale.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Overcoming CGNAT Constraints with Tailscale" />
+  <meta name="twitter:description" content="Learn how to overcome CGNAT limitations on satellite and 5G home internet connections using Tailscale for direct port forwarding and hosting." />
+  <meta name="twitter:image" content="../public/img/cgnat.jpg" />
+  
+  <!-- Author -->
+  <meta name="author" content="Farzin Adil" />
+  
+  <!-- Optionally, robots directive -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- JSON-LD Structured Data (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Overcoming CGNAT Constraints with Tailscale",
+    "description": "Learn how to overcome CGNAT limitations on satellite and 5G home internet connections using Tailscale, a powerful VPN solution that enables port forwarding and hosting behind NAT.",
+    "image": "../public/img/cgnat.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Farzin Adil"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "farzinadil.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.yourwebsite.com/images/logo.png"
+      }
+    },
+    "datePublished": "2025-01-03"
+  }
+  </script>
+
+  <script type="text/javascript" src="../js/script.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/public/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="/public/img/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="../css/article.css">
+  <link rel="stylesheet" href="../css/output.css">
+</head>
+<body class="bg-white main-font">
+  <div class="container mx-auto px-6 py-10">
+    <div class="flex flex-col lg:flex-row justify-between items-start">
+      <!-- Mobile menu button -->
+      <div class="text-5xl font-bold mb-10 w-full flex justify-between lg:hidden">
+        <h1 id="site-title"><a href="../index.html">Farzin Adil</a></h1>
+        <button class="text-3xl" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="flex justify-center lg:justify-start space-x-3 p-1 lg:hidden mt-[-2.5rem] mb-1">
+        <a href="mailto:farzinadil@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/farzinadil" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/farzinadil" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/farzinadil/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Instagram link visible on mobile only -->
+        <a href="https://www.instagram.com/farzinadil/" target="_blank" class="block lg:hidden"><i class="fab fa-instagram"></i></a>
+      </div>
+      <!-- Mobile menu -->
+      <nav id="navigation" class="flex flex-col items-center bg-white z-10 p-4 w-full absolute hidden lg:hidden">
+        <a href="../html/articles.html" class="text-xl mb-4">Articles</a>
+        <a href="../html/projects.html" class="text-xl mb-4">Projects</a>
+        <a href="../html/books.html" class="text-xl mb-4">Bookshelf</a>
+        <a href="../html/contact.html" class="text-xl mb-4">Contact</a>
+      </nav>
+      <div class="desktop-grid"></div>
+      <!-- Left column for name and navigation (shown on desktop) -->
+      <div class="w-full lg:w-1/4 lg:block hidden mb-10">
+        <div class="desktop-header">
+            <h1 id="site-title"><a href="../index.html">Farzin Adil</a></h1>
+            <!-- Other header content if needed -->
+        </div>
+        <nav class="flex flex-col text-xl">
+          <a href="../html/articles.html" class="mb-4">Articles</a>
+          <a href="../html/projects.html" class="mb-4">Projects</a>
+          <a href="../html/books.html" class="mb-4">Bookshelf</a>
+          <a href="../html/contact.html" class="mb-4">Contact</a>
+        </nav>
+        <div class="flex text-2xl">
+          <a href="mailto:farzinadil@gmail.com" class="mr-6"><i class="fas fa-envelope"></i></a> <!-- Email icon -->
+          <a href="https://github.com/farzinadil" target="_blank" class="mr-6"><i class="fab fa-github"></i> <!-- GitHub icon -->
+          <a href="https://twitter.com/farzinadil" target="_blank" class="mr-6"><i class="fab fa-twitter"></i></a> <!-- Twitter icon -->
+          <a href="https://www.linkedin.com/in/farzinadil/" target="_blank" class="mr-6"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn icon -->
+        </div>
+      </div>
+      <!-- Right column for profile and bio -->
+      <div class="p-4 md:w-3/4 w-full">
+        <div class="max-w-4xl mx-auto">
+          <!-- Article Title -->
+          <h2 class="text-2xl font-bold mb-4 mt-8">Overcoming CGNAT Constraints with Tailscale</h2>
+          <!-- Article Meta and Content -->
+          <p class="text-gray-600">January 3, 2025</p>
+        </br>
+          <!-- Article content goes here -->
+          <p>This article explores how Tailscale’s VPN solution can help users regain the ability to host servers, forward ports, and establish direct connections behind CGNAT.</p>
+        </br>
+        <img src="../public/img/cgnat.jpg" alt="CGNAT workaround using Tailscale">
+        </br>
+          <p>The internet relies on two main versions of the Internet Protocol (IP) for communication: IPv4 and IPv6. IPv4, the older version, uses 32-bit addresses and can support around 4.3 billion unique addresses. However, with the rapid growth of internet-connected devices, the world has faced a shortage of available IPv4 addresses. To mitigate this issue, network address translation (NAT) and carrier-grade NAT (CGNAT) have been implemented. NAT is a technique used by routers to conserve public IPv4 addresses by assigning private IP addresses to devices within a local network and translating them to a single public IP address. CGNAT takes this a step further by adding another layer of NAT, typically implemented by Internet Service Providers (ISPs) to further conserve public IPv4 addresses.
+          </p>
+        </br>
+          <p>Many ISPs, including those offering 5G and satellite internet services, heavily rely on CGNAT to manage the limited availability of IPv4 addresses. The use of CGNAT allows these ISPs to serve a large number of customers while using a smaller pool of public IPv4 addresses. This is particularly important for 5G and satellite ISPs, as they face the challenge of providing internet access to a rapidly growing number of devices in a cost-effective manner. However, the widespread use of CGNAT by these ISPs also means that many users face the limitations imposed by CGNAT, such as the lack of port forwarding capabilities.
+            </p>
+        </br>
+          <p>
+            IPv6, the newer version of the Internet Protocol, uses 128-bit addresses and can support an astronomical number of unique addresses, effectively eliminating the need for NAT and CGNAT. However, the adoption of IPv6 has been slow, and many ISPs and networks still heavily rely on IPv4 and CGNAT. Home internet using CGNAT (like T-Mobile 5G or Starlink) lacks a dedicated public IP, making it difficult to host servers, use port forwarding, or establish peer-to-peer connections. 
+          </p>
+        </br>
+        <p>
+            This is where Tailscale comes into play. It’s a VPN service that enables devices on different networks to seamlessly connect, effectively bypassing the limitations of CGNAT. By using Tailscale, you can establish direct connections and configure features such as subnets or exit nodes. In my setup, I followed <a href="https://tailscale.com/kb/1280/appletv" target="_blank" class="custom-link">this guide</a> o configure my Apple TV as both an exit node and a subnet router.
+        </p>
+        </br>
+        <p>
+            To validate my setup, I connected my desktop and phone to the Tailscale network. While my desktop and Apple TV remained on the same home Wi-Fi, my phone used cellular data. I then ran a simple “Hello World” server on my desktop using the Python code shown below. 
+        </p>
+        </br>
+        </br>
+        <script src="https://gist.github.com/farzinadil/31b3ebb3dbea4a30cf719c62ba6b31f7.js"></script>
+        </br>
+        <p>
+            Next, I retrieved my desktop’s Tailscale IP from the Tailscale app. By navigating to that IP address and appending “:8080” in my web browser, I successfully loaded the “Hello World” page—demonstrating that the Tailscale connection works smoothly, even behind CGNAT.  
+        </p>
+        </br>
+        <p>
+            Ultimately, although home internet from satellite or 5G ISPs often imposes CGNAT limitations, Tailscale provides a powerful way to bypass these constraints. By enabling direct device-to-device connections and support for subnets or exit nodes, Tailscale empowers users to host servers, forward ports, and enjoy the full benefits of the internet—even behind CGNAT.
+        </p>
+        </br>
+        <hr>
+        </br>
+        <p>
+            Reach out to me at <a href="mailto:farzinadil@gmail.com" class="email-link text-gray-600">farzinadil@gmail.com</a> for any questions, suggestions, or feedback.
+        </p> 
+
+
+
+        </div>
+      </div>
+      <!-- End right column -->
+    </div>
+  </div>
+</body>
+</html>
